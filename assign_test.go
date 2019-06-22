@@ -11,7 +11,7 @@ func TestAssign(t *testing.T) {
 	}
 
 	secondMap := map[string]interface{}{
-		"one":   "overwrited",
+		"one":   "overwriten",
 		"three": "third value",
 		"four":  "fourth value",
 	}
@@ -23,7 +23,7 @@ func TestAssign(t *testing.T) {
 	}
 
 	expectedKeys := map[string]interface{}{
-		"one":   "overwrited",
+		"one":   "overwriten",
 		"two":   "Second value",
 		"three": "third value",
 		"four":  "fourth value",
@@ -31,10 +31,10 @@ func TestAssign(t *testing.T) {
 	for key, value := range mergedMaps {
 		if expectedKeys[key] != nil {
 			if expectedKeys[key] != value {
-				t.Errorf("The extected value was %v and got %v", expectedKeys[key], value)
+				t.Errorf("The expected value was %v and got %v", expectedKeys[key], value)
 			}
 		} else {
-			t.Errorf("The extected value was %v and got %v", key, expectedKeys[key])
+			t.Errorf("The expected value was %v and got %v", key, expectedKeys[key])
 		}
 	}
 }
