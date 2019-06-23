@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-var containsTest = []struct {
+var containsTests = []struct {
 	query    string
 	expected bool
 }{
@@ -15,7 +15,7 @@ var containsTest = []struct {
 func TestContains(t *testing.T) {
 	slice := []string{"one", "two", "three"}
 
-	for _, tt := range containsTest {
+	for _, tt := range containsTests {
 		result := Contains(slice, tt.query)
 
 		if result != tt.expected {
